@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card my-5 mx-auto" style="width: 18rem;">
+                    <img src="img/registro.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h3 class="card-title">Registro</h3>
+                      <form action="app/php/insertar.php" method="POST">
+
+                        <!-- Formulario -->
+
+                        <label class="form-label">Nombre del Usuario</label>
+                        <input type="text" class="form-control" name="nombre"/>
+
+                        <label class="form-label">Correo</label>
+                        <input type="email" class="form-control" name="correo"/>
+
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password"/>
+
+                        <button type="submit" class="btn btn-primary my-3 form-control">Guardar</button>
+
+                        <!-- Formulario -->
+
+                      </form>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
