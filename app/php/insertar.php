@@ -1,21 +1,28 @@
 <?php
-
-error_reporting(E_ALL ^ E_DEPRECATED);
-header("Content-Type: text/html; Charset=UTF-8");
-
-// Variables del fomrulario
-$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
-$correo = isset($_POST['correo']) ? $_POST['correo'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
-
-// Conexion a Data
-$con = new SQLite3("../data/tuvsa.db") or die("Problemas para conectar");
-
-// Consulta a SQL
-$cs = $con -> query("INSERT INTO registro (nombre, correo, password) VALUES ('$nombre', '$correo', '$password')");
-
-echo '<script>alert("Datos Insertados")</script>';
-echo '<script>window.location="../../registro.html"</script>';
-
-
+include 'backEnd_insertar.php';
 ?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>Datos</title>
+</head>
+<body>
+    <script src="../../js/sweetalert.js"></script>
+    <script>
+        Swal.fire({
+            title: 'Datos Guardados!',
+            icon: 'success',
+            confirmButtonColor: '#3085d6'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location='../../registro.html'
+            }
+        })
+    </script>
+</body>
+</html>
